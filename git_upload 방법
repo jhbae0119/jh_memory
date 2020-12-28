@@ -1,0 +1,53 @@
+파일 생성 후
+1. git status
+	commit이 필요하거나,
+	untracked files가 있는지 확인
+	$ git status
+	On branch master
+	Your branch is up to date with 'origin/master'.
+
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git restore <file>..." to discard changes in working directory)
+			modified:   cat
+
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+			helloworld.py
+			python_1228.py
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+2. git add
+
+3. git commit 
+	$ git commit -am "commit test"
+	[master b86fc2b] commit test
+	 3 files changed, 170 insertions(+), 1 deletion(-)
+	 create mode 100644 helloworld.py
+	 create mode 100644 python_1228.py
+
+4. log 확인
+	$ git log
+	commit b86fc2bdcebebc88bf0f513c9935b74624231d6a (HEAD -> master)
+	Author: jhbae <puppy119@naver.com>
+	Date:   Tue Dec 29 00:31:47 2020 +0900
+
+		commit test
+		
+5. $ git remote
+	origin
+	
+6. 원격 repository에 push
+	$ git push -u origin master
+	Enumerating objects: 7, done.
+	Counting objects: 100% (7/7), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (4/4), done.
+	Writing objects: 100% (5/5), 2.88 KiB | 984.00 KiB/s, done.
+	Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/jhbae0119/jh_memory.git
+	   778e127..b86fc2b  master -> master
+	Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
