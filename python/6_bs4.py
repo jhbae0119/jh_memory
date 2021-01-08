@@ -16,13 +16,29 @@ soup = BeautifulSoup(res.text,"lxml")
 # find 함수 사용
 # # 어떤 a 태그를 찾을지 정의 가능
 # print(soup.find("a", attrs={"class":"Nbtn_upload"}))
-#     # ==> soup 객체 중 a 태그에 해당 + class 속성이 Nbtn_upload 인 것만 찾음
+#     # ==>  에 해당 + class 속성이 Nbtn_upload 인 것만 찾음
 # print(soup.find(attrs={"class":"Nbtn_upload"}))
 #     # ==> 어떤 태그에서 찾을지 설정 안해도 됨
 
 # 인기 만화 순위 가져오기
 # print(soup.find("li", attrs ={"class":"rank01"}))
 rank1 = soup.find("li", attrs ={"class":"rank01"})
-print(rank1.a)
+print(rank1.a.get_text())
 
+### next_sibling
+# print(rank1.next_sibling)  #rank1의 a 엘리먼트 다음 요소로 넘어감
+# print(rank1.next_sibling.next_sibling)
+rank2= rank1.next_sibling.next_sibling
+rank3= rank2.next_sibling.next_sibling
+print(rank3.a.get_text())
 
+### previous_sibling
+rank2= rank3.previous_sibling.previous_sibling
+print(rank2.a.get_text())
+
+### Parent 
+#print(rank1.parent)
+
+### find_next_sibling(조건)
+rank2=rank1.find_next_sibling("li")
+print(rank2.a.get_text())
