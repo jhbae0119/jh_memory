@@ -49,26 +49,14 @@ for yy in range(2010,2021):
 # 03. 통합 데이터를 엑셀로 저장
 df.to_excel('./DataAnalytics/04_COVID_FILES/kto_total.xlsx', index = False)
 
-# # 04. 국적별 데이터를 엑셀로 저장
-# cntry_list=df['국적'].unique()
-# for cntry in cntry_list:
-#     # 국적으로 필터링
-#     condition = (df['국적']==cntry)
-#     df_filter=df[condition]
-#     # 국적명을 반영한 파일명 만들기
-#     file_path ='./DataAnalytics/04_COVID_FILES/[국적별관광객데이터] {}.xlsx'.format(cntry)
-#     # 정해놓은 파일명으로 저장하기
-#     df_filter.to_excel(file_path, index=False)
+# 04. 국적별 데이터를 엑셀로 저장
+cntry_list=df['국적'].unique()
+for cntry in cntry_list:
+    # 국적으로 필터링
+    condition = (df['국적']==cntry)
+    df_filter=df[condition]
+    # 국적명을 반영한 파일명 만들기
+    file_path ='./DataAnalytics/04_COVID_FILES/[국적별관광객데이터] {}.xlsx'.format(cntry)
+    # 정해놓은 파일명으로 저장하기
+    df_filter.to_excel(file_path, index=False)
 
-
-# # 예제 4-40 개별 국적별 관광객 데이터 저장하기 
-# for cntry in cntry_list: 
-#     # 국적으로 필터링 
-#     condition = (df['국적'] == cntry)
-#     df_filter = df[condition]
-    
-#     # 국적이름을 반영한 파일명 만들기 
-#     file_path = './files/[국적별 관광객 데이터] {}.xlsx'.format(cntry)
-    
-#     # 정해 놓은 파일명으로 저장하기 
-#     df_filter.to_excel(file_path, index = False)

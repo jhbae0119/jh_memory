@@ -17,17 +17,17 @@ elif platform.system() == 'Darwin':
 else:
     print('Check your OS system')
 
-# # 전체 관광객 중 중국 국적의 관광객 수 추출
-# condition = (df['국적']=='중국')
-# df_filter = df[condition]
-# # print(df_filter.head())
-# plt.figure(figsize=(12,4))  # 그래프 크기 지정
-# plt.plot(df_filter['기준년월'], df_filter['관광'])  # plt.plot(X축칼럼,Y축칼럼)
-# plt.title('중국 관광객 추이')
-# plt.xlabel('기준년월')
-# plt.ylabel('관광객수')
-# plt.xticks(['2010-01', '2011-01', '2012-01', '2013-01', '2014-01', '2015-01', '2016-01', '2017-01', '2018-01', '2019-01', '2020-01'])
-# plt.show()
+# 전체 관광객 중 중국 국적의 관광객 수 추출
+condition = (df['국적']=='중국')
+df_filter = df[condition]
+# print(df_filter.head())
+plt.figure(figsize=(12,4))  # 그래프 크기 지정
+plt.plot(df_filter['기준년월'], df_filter['관광'])  # plt.plot(X축칼럼,Y축칼럼)
+plt.title('중국 관광객 추이')
+plt.xlabel('기준년월')
+plt.ylabel('관광객수')
+plt.xticks(['2010-01', '2011-01', '2012-01', '2013-01', '2014-01', '2015-01', '2016-01', '2017-01', '2018-01', '2019-01', '2020-01'])
+plt.show()
 
 # 국적별 외국인 관광객 추이
 cntry_list = ['중국','일본','대만','미국','홍콩']

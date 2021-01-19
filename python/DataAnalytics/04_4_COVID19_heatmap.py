@@ -34,16 +34,16 @@ df_pivot = df_filter.pivot_table(values='관광', index ='년도', columns ='월
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# # 그래프 크기 설정
-# plt.figure(figsize=(16,10))
-# # 히트맵 데이터 그리기
-# sns.heatmap(df_pivot,annot=True, fmt='.0f', cmap='rocket_r')
-#     # annot=True    : 히트맵 그래프에서 각 칸에 실제 값 표시
-#     # fmt='.0f'     : 숫자 형태를 소수점이 없는 실수 형태로 표시
-#     # cmap='rocket_r' : 그래프의 색깔 조합을 지정
-# # 그래프 타이틀 달기
-# plt.title('중국인 관광객 히트맵')
-# plt.show()
+# 그래프 크기 설정
+plt.figure(figsize=(16,10))
+# 히트맵 데이터 그리기
+sns.heatmap(df_pivot,annot=True, fmt='.0f', cmap='rocket_r')
+    # annot=True    : 히트맵 그래프에서 각 칸에 실제 값 표시
+    # fmt='.0f'     : 숫자 형태를 소수점이 없는 실수 형태로 표시
+    # cmap='rocket_r' : 그래프의 색깔 조합을 지정
+# 그래프 타이틀 달기
+plt.title('중국인 관광객 히트맵')
+plt.show()
 
 # 상위 5개국에 대한 히트맵 그리기
 cntry_list = ['중국','일본','대만','미국','홍콩']
