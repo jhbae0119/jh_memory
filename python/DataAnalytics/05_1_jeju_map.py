@@ -62,3 +62,6 @@ print(location_data.head())
 # # 장소 이름 기준 병합
 # location_data = location_data.pivot_table(index = ['name_official','경도','위도'], values = 'place', aggfunc='sum')
 #     # ['name_official','경도','위도']를 통해 값이 모두 동일한 경우 place 값을 병합함
+
+# 병합한 데이터 저장
+location_data.to_excel('./DataAnalytics./3_location_inform.xlsx', index= False)
