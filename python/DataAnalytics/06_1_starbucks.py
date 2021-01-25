@@ -34,6 +34,7 @@ for item in starbucks_soup_list:
     address = str(item.select('p.result_details')[0]).split('<br/>')[0].split('>')[1]
     tel = str(item.select('p.result_details')[0]).split('<br/>')[1].split('<')[0]
     starbucks_list.append([ name, lat, lng, store_type, address, tel])
+    #starbucks_list.append([ name, lat, lng, store_type, address, tel])
 
 # 데이터 프레임으로 변환
 columns = ['매장명','위도','경도','매장타입','주소','전화번호']
